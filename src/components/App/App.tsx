@@ -7,20 +7,21 @@ import VoteStats from '../VoteStats/VoteStats.tsx';
 import Notification from '../Notification/Notification.tsx';
 
 const initVotes: Votes = {
-  good: 0,
-  neutral: 0,
-  bad: 0,
+    good: 0,
+    neutral: 0,
+    bad: 0,
+  
 };
 
 export default function App() {
   const [votes, setVotes] = useState<Votes>(initVotes);
 
   const handleVote = (type: VoteType) => {
-    setVotes(prevVotes => ({
-      ...prevVotes,
-      [type]: prevVotes[type] + 1,
-    }));
-  };
+  setVotes(prevVotes => ({
+    ...prevVotes,
+    [type]: prevVotes[type] + 1,
+  }));
+};
 
   const resetVotes = () => {
     setVotes(initVotes);
